@@ -277,14 +277,6 @@
 
 /* ===== SOBRE MIM SEÇÃO ===== */
 
-.about-me {
-  background:
-    radial-gradient(circle at top left,
-      rgba(160, 113, 91, 0.15),
-      transparent 30%),
-    #212529;
-}
-
 .about-text {
   line-height: 1.9;
   font-size: 1.05rem;
