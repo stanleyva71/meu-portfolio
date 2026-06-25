@@ -6,7 +6,10 @@
   box-sizing: border-box;
   font-family: 'Space Grotesk', sans-serif;
   scroll-behavior: smooth;
-  scroll-margin-top: 80px;
+  scroll-margin-top: 80px; 
+}
+html, body {
+    overflow-x: hidden;
 }
 
 .scroll-indicator {
@@ -163,14 +166,14 @@
 
 .home-section {
   min-height: 96vh;
-  background: linear-gradient(135deg, #212529 0%, #212529 50%, #a0715b 50%, #fdc57d 100%);
+  background: linear-gradient(135deg, #212529 0%, #212529 50%, #a0715b 50%, #fdc57d 100%);z-index: 9999;
 }
 
 .home-content {
   max-width: 500px;
   text-align: left;
   padding-left: 2rem;
-  margin-bottom: 9rem;
+  margin-bottom: 9rem; 
 }
 
 .my-name {
@@ -186,7 +189,6 @@
 }
 
 @keyframes pisca {
-
   0%,
   100% {
     opacity: 1;
@@ -344,9 +346,9 @@
 
 .btn-about-primary {
   border: 2px solid rgba(61, 58, 58, 0.315) !important;
-  border: none;
+  border: solid 1px #fdc57d !important;
   border-radius: 14px;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .btn-about-primary:hover {
@@ -502,8 +504,7 @@ ul {
     filter 0.35s ease;
 }
 
-.skill-card:hover .card-icon img,
-.skill-card:hover .card-icon i {
+.skill-card:hover .card-icon img {
   transform: scale(1.12) rotate(-3deg);
   filter: drop-shadow(0 5px 10px rgba(253, 197, 125, 0.25));
 }

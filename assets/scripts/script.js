@@ -1,6 +1,7 @@
 // Tema escuro
 const temaEscuro = () => {
   document.body.setAttribute('data-bs-theme', 'dark');
+  atualizarLogoGithub();
 
   document.querySelector('#dl-icon-mobile')
     .setAttribute('class', 'bi bi-sun-fill fs-3');
@@ -12,6 +13,7 @@ const temaEscuro = () => {
 // Tema claro
 const temaClaro = () => {
   document.body.setAttribute('data-bs-theme', 'light');
+  atualizarLogoGithub();
 
   document.querySelector('#dl-icon-mobile')
     .setAttribute('class', 'bi bi-moon-fill fs-3');
@@ -25,6 +27,16 @@ const trocarTema = () => {
   document.body.getAttribute('data-bs-theme') === "light"
     ? temaEscuro()
     : temaClaro();
+}
+
+const atualizarLogoGithub = () => {
+  const logo = document.getElementById('github-logo');
+
+  if (document.body.getAttribute('data-bs-theme') === 'dark') {
+    logo.src = './assets/img/github-logo.png';
+  } else {
+    logo.src = './assets/img/github-logo2.png';
+  }
 }
 
 
@@ -219,4 +231,4 @@ if (form) {
 setTimeout(() => {
   document.querySelector('.scroll-indicator')
     .classList.add('hide');
-}, 5000);
+}, 2200);
