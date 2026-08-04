@@ -1,20 +1,12 @@
+# Portfólio Stanley Vale 💻
 ![Logo](assets/img/Portifolio.png)
 
-# Portfólio do Stanley Vale 💻
 
-Bem-vindo ao **Portfólio do Stanley Vale**!
+Bem-vindo ao meu **Portfólio**!
 
-Um **site de portfólio** moderno, desenvolvido para apresentar meus projetos, habilidades e experiências como desenvolvedor front-end utilizando **HTML, CSS, JavaScript e Bootstrap**.
+Um **portfólio** moderno, desenvolvido para apresentar meus projetos, habilidades e experiências como desenvolvedor front-end utilizando **HTML, CSS, JavaScript e Bootstrap**.
 
 O projeto é totalmente **responsivo**, moderno e otimizado para computadores, tablets e dispositivos móveis.
-
----
-
-## Demonstração ao Vivo 🚀
-
-Você pode acessar o projeto online aqui:
-
-[🌐 Acessar Portfólio](https://stanleyva71.github.io/meu-portfolio/)
 
 ---
 
@@ -64,26 +56,6 @@ Você pode acessar o projeto online aqui:
 - **Bootstrap Icons** – Ícones modernos
 
 - **AOS.js** – Animações durante o scroll
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais informações.
-
----
-
-## 🚀 Como executar o projeto
-
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/stanleyva71/meu-portfolio.git
-```
-
-2. Abra o projeto em seu editor de código
-
-3. Execute o arquivo `index.html`
 
 ---
 
