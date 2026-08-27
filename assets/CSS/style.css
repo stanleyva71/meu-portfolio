@@ -537,10 +537,10 @@ ul {
 /* ===== PROJETOS SEÇÃO ===== */
 
 .project-box {
-  height: 195px;
-  width: 310px;
-  border-radius: 20px;
-  border: 5px solid #fdc57d;
+  height: 350px;
+  width: 550px;
+  border-radius: 15px;
+  border: 1px solid #6951319a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -551,6 +551,8 @@ ul {
 
 .project-box:hover {
   letter-spacing: 5px;
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 .project-box div {
