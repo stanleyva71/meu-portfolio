@@ -13,6 +13,9 @@
 </head>
 
 <body data-bs-theme="dark">
+  <div id="splash-cursor">
+    <canvas id="fluid"></canvas>
+  </div>
   <!-- Cabeçalho -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
@@ -107,20 +110,30 @@
       <!-- Sobre mim -->
       <section id="sobre-mim" class="about-me py-5 position-relative overflow-hidden">
 
-        <div class="container">
-          <h1 class="display-3 fw-bold pb-4 text-center text-gradient reveal">Sobre mim</h1>
-          <div class="row align-items-center justify-content-center g-5">
-            <div class="col-lg-5 text-center reveal-left">
+        <!-- Efeito de fundo -->
+        <div id="scanner"></div>
 
+        <div class="container position-relative">
+
+          <h1 class="display-3 fw-bold pb-4 text-center text-gradient reveal">
+            Sobre mim
+          </h1>
+
+          <div class="row align-items-center justify-content-center g-5">
+
+            <div class="col-lg-5 text-center reveal-left">
               <div class="about-image-container position-relative">
                 <div class="about-glow"></div>
+
                 <img src="assets/img/about-me.png" alt="Stanley Vale" class="img-fluid about-img">
               </div>
-
             </div>
 
             <div class="col-lg-6 reveal-right">
-              <h1 class="fw-bold text-gradient mb-4">Transformando ideias em experiências digitais</h1>
+
+              <h1 class="fw-bold text-gradient mb-4">
+                Transformando ideias em experiências digitais
+              </h1>
 
               <p class="about-text mb-4">
                 Tenho experiência prática por meio de projetos acadêmicos
@@ -146,7 +159,7 @@
                 e participar de projetos que gerem impacto real.
               </p>
 
-              <!-- Skills rápidas -->
+              <!-- Skills -->
               <div class="d-flex flex-wrap gap-2 mb-4">
                 <span class="skill-badge">HTML5</span>
                 <span class="skill-badge">JavaScript</span>
@@ -156,6 +169,7 @@
                 <span class="skill-badge">Java</span>
               </div>
 
+              <!-- Estatísticas -->
               <div class="row g-3 mb-5">
 
                 <div class="col-4">
@@ -181,6 +195,7 @@
 
               </div>
 
+              <!-- Botões -->
               <div class="d-flex flex-wrap gap-3">
 
                 <button class="btn btn-about-secondary px-4 py-3 fw-bold">
@@ -188,18 +203,20 @@
                   Contrate-me
                 </button>
 
-                <a href="assets/Stanley-CV.pdf" download class="btn btn-about-primary px-3 py-3 fw-bold">
-
-                  <i class="bi bi-download"></i> Baixar Currículo</a>
+                <a href="./assets/CV-STANLEY.pdf" download class="btn btn-about-primary px-3 py-3 fw-bold">
+                  <i class="bi bi-download"></i>
+                  Baixar Currículo
+                </a>
 
               </div>
+
             </div>
           </div>
         </div>
       </section>
 
       <!-- Habilidades & Ferramentas -->
-      <section id="habilidades" class="skills-section py-5">
+      <section id="habilidades" class="skills-section mt-5">
         <div style="max-width: 1000px;" class="container">
           <h1 class="display-3 fw-bold pb-5 text-center text-gradient reveal">Habilidades e Ferramentas</h1>
           <div class="row align-items-center">
@@ -317,53 +334,152 @@
           </div>
         </div>
       </section>
-
+      <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=a0715b&height=120&section=footer" />
       <!-- Projetos -->
       <section id="projetos" class="projects pt-5 text-center">
+
         <div>
-          <h1 class="display-3 fw-bold pb-5 text-gradient">Projetos</h1>
+          <h1 class="display-3 fw-bold pb-5 text-gradient">
+            Projetos
+          </h1>
+
           <div class="d-flex flex-wrap gap-3 w-100 mx-auto justify-content-center">
+
+            <!-- CONTROLE DE ESTOQUE -->
             <div class="project-box reveal-zoom delay-1 shadow-lg">
-              <a href="https://github.com/stanleyva71/controle-estoque-react" target="_blank">
-                <img style="width: 100%; height: 100%;" src="./assets/img/controle-de-estoque.png" alt="Project icon">
-              </a>
+
+              <img src="./assets/img/controle-de-estoque.png" alt="Projeto Controle de Estoque" />
+
+              <div class="project-info">
+
+                <h3>Controle de Estoque</h3>
+
+                <p>
+                  Sistema web para gerenciamento de produtos,
+                  movimentações de estoque e análise de dados.
+                </p>
+
+                <div class="project-tech">
+                  <span>React</span>
+                  <span>TypeScript</span>
+                  <span>Tailwind</span>
+                  <span>Express</span>
+                </div>
+
+                <a href="https://github.com/stanleyva71/controle-estoque-react" target="_blank"
+                  rel="noopener noreferrer" class="project-link">
+                  Ver no GitHub
+                  <i class="bi bi-github"></i>
+                </a>
+
+              </div>
+
             </div>
+
+
+            <!-- MOTHERBOARD -->
             <div class="project-box reveal-zoom delay-2 shadow-lg">
-              <a class="link" href="https://github.com/stanleyva71/motherboard-ecommerce" target="_blank">
-                <img style="width: 100%;height: 100%;" src="./assets/img/motherboard.png" alt="Project icon">
-              </a>
+
+              <img src="./assets/img/motherboard.png" alt="Projeto Motherboard E-commerce" />
+
+              <div class="project-info">
+
+                <h3>Motherboard</h3>
+
+                <p>
+                  E-commerce desenvolvido como projeto acadêmico,
+                  focado em interface e experiência do usuário.
+                </p>
+
+                <div class="project-tech">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Bootstrap</span>
+                </div>
+
+                <a href="https://github.com/stanleyva71/motherboard-ecommerce" target="_blank" rel="noopener noreferrer"
+                  class="project-link">
+                  Ver no GitHub
+                  <i class="bi bi-github"></i>
+                </a>
+
+              </div>
+
             </div>
+
+
+            <!-- PASSWORD GAME -->
             <div class="project-box reveal-zoom delay-3 shadow-lg">
-              <a href="https://github.com/stanleyva71/password-game" target="_blank">
-                <img style="width: 100%;height: 100%;" src="./assets/img/java-game.png" alt="Project icon">
-              </a>
+
+              <img src="./assets/img/java-game.png" alt="Projeto Password Game" />
+
+              <div class="project-info">
+
+                <h3>Password Game</h3>
+
+                <p>
+                  Jogo desenvolvido em Java para praticar lógica,
+                  regras e interação com o usuário.
+                </p>
+
+                <div class="project-tech">
+                  <span>Java</span>
+                  <span>POO</span>
+                  <span>Lógica</span>
+                </div>
+
+                <a href="https://github.com/stanleyva71/password-game" target="_blank" rel="noopener noreferrer"
+                  class="project-link">
+                  Ver no GitHub
+                  <i class="bi bi-github"></i>
+                </a>
+
+              </div>
+
             </div>
+
+
+            <!-- EM BREVE -->
             <div class="project-box reveal-zoom delay-4 hidden shadow-lg">
-              <div>
-                <p class="fs-5 text-white mb-0">EM BREVE</p>
+              <div class="coming-soon">
+                <p>EM BREVE</p>
               </div>
             </div>
+
             <div class="project-box reveal-zoom delay-5 hidden shadow-lg">
-              <div>
-                <p class="fs-5 text-white mb-0">EM BREVE</p>
+              <div class="coming-soon">
+                <p>EM BREVE</p>
               </div>
             </div>
+
             <div class="project-box reveal-zoom delay-6 hidden shadow-lg">
-              <div>
-                <p class="fs-5 text-white mb-0">EM BREVE</p>
+              <div class="coming-soon">
+                <p>EM BREVE</p>
               </div>
             </div>
+
           </div>
+
 
           <div class="see-more mx-auto pt-5 pb-5 d-flex flex-column flex-wrap align-items-center gap-4">
-            <button class="see-more-btn text-white rounded-pill text-white border-0">Ver mais</button>
+
+            <button class="see-more-btn text-white rounded-pill border-0">
+              Ver mais
+            </button>
 
             <a class="text-light text-decoration-none rounded-3 p-1 bg-brown d-inline"
-              href="https://github.com/stanleyva71" target="_blank">Repositórios no github <i
-                class="bi bi-github"></i></a>
+              href="https://github.com/stanleyva71" target="_blank" rel="noopener noreferrer">
+              Repositórios no GitHub
+              <i class="bi bi-github"></i>
+            </a>
+
           </div>
+
         </div>
+
       </section>
+
 
       <!-- Contato -->
       <section id="contato" class="py-5">
@@ -530,6 +646,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>emailjs.init("MvjRmroOnFIsDIkob");</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/scripts/splash-cursor.js"></script>
   <script src="assets/scripts/script.js"></script>
 </body>
 

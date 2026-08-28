@@ -6,10 +6,28 @@
   box-sizing: border-box;
   font-family: 'Space Grotesk', sans-serif;
   scroll-behavior: smooth;
-  scroll-margin-top: 80px; 
+  scroll-margin-top: 80px;
 }
-html, body {
-    overflow-x: hidden;
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ===== CURSOR SPLASH ===== */
+#splash-cursor {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  pointer-events: none;
+}
+
+#fluid {
+  width: 100vw;
+  height: 100vh;
+  display: block;
 }
 
 .scroll-indicator {
@@ -166,14 +184,15 @@ html, body {
 
 .home-section {
   min-height: 96vh;
-  background: linear-gradient(135deg, #212529 0%, #212529 50%, #a0715b 50%, #fdc57d 100%);z-index: 9999;
+  background: linear-gradient(135deg, #212529 0%, #212529 50%, #a0715b 50%, #fdc57d 100%);
+  z-index: 9999;
 }
 
 .home-content {
   max-width: 500px;
   text-align: left;
   padding-left: 2rem;
-  margin-bottom: 9rem; 
+  margin-bottom: 9rem;
 }
 
 .my-name {
@@ -189,6 +208,7 @@ html, body {
 }
 
 @keyframes pisca {
+
   0%,
   100% {
     opacity: 1;
@@ -278,6 +298,36 @@ html, body {
 
 
 /* ===== SOBRE MIM SEÇÃO ===== */
+
+/* SCANNER - FUNDO SOBRE MIM */
+#sobre-mim {
+  position: relative;
+  overflow: hidden;
+}
+
+#scanner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+#scanner canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Conteúdo da seção fica por cima */
+#sobre-mim .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Fim do scanner */
 
 .about-text {
   line-height: 1.9;
@@ -537,7 +587,7 @@ ul {
 /* ===== PROJETOS SEÇÃO ===== */
 
 .project-box {
-  height: 350px;
+  height: 450px;
   width: 550px;
   border-radius: 15px;
   border: 1px solid #6951319a;
@@ -546,22 +596,157 @@ ul {
   justify-content: center;
   cursor: pointer;
   overflow: hidden;
-  transition: ease-in-out 0.3s;
+  position: relative;
+  transition: ease-in-out 0.35s;
 }
 
 .project-box:hover {
-  letter-spacing: 5px;
-  transform: scale(1.05);
-  opacity: 0.8;
+  transform: scale(1.03);
 }
 
-.project-box div {
-  background: linear-gradient(135deg, #a0715b 50%, #fdc57d 100%);
+/* IMAGEM */
+
+.project-box>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-box:hover>img {
+  transform: scale(1.08);
+}
+
+/* INFORMAÇÕES */
+
+.project-info {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 35px;
+
+  text-align: left;
+
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.75) 40%,
+      rgba(0, 0, 0, 0.1) 100%);
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.project-box:hover .project-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* TÍTULO */
+
+.project-info h3 {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* DESCRIÇÃO */
+
+.project-info p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 500px;
+  margin-bottom: 18px;
+}
+
+/* TECNOLOGIAS */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.project-tech span {
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  color: #fff;
+
+  background: rgba(160, 113, 91, 0.85);
+
+  border: 1px solid rgba(253, 197, 125, 0.35);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  backdrop-filter: blur(5px);
+}
+
+/* BOTÃO GITHUB */
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  width: fit-content;
+
+  padding: 10px 18px;
+
+  border-radius: 25px;
+
+  color: #fff;
+  background: #a0715b;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.project-link:hover {
+  color: #fff;
+  background: #fdc57d;
+  transform: translateY(-2px);
+}
+
+/* EM BREVE */
+
+.project-box>.coming-soon {
+  background: linear-gradient(135deg,
+      #a0715b 50%,
+      #fdc57d 100%);
+
   width: 1000px;
+
   text-align: center;
+
   padding: 5% 0;
+
   transform: rotate(-50deg);
 }
+
+.coming-soon p {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+/* ESCONDIDOS */
 
 .hidden {
   display: none;
@@ -569,12 +754,13 @@ ul {
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Classe que será adicionada via JavaScript */
 .show {
   display: flex !important;
   opacity: 1;
   transition: ease-in-out 0.3s;
 }
+
+/* BOTÃO VER MAIS */
 
 .see-more-btn {
   padding: 10px 100px;
@@ -583,9 +769,58 @@ ul {
 }
 
 .see-more-btn:hover {
-  background: linear-gradient(180deg, #a0715b 50%, #fdc57d 150%);
+  background: linear-gradient(180deg,
+      #a0715b 50%,
+      #fdc57d 150%);
+
   box-shadow: 0 5px 25px rgba(187, 131, 105, 0.45);
+
   letter-spacing: 1px;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .project-box {
+    width: 95%;
+    height: 350px;
+  }
+
+  .project-info {
+    padding: 25px;
+  }
+
+  .project-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .project-box {
+    height: 300px;
+  }
+
+  .project-info {
+    padding: 20px;
+  }
+
+  .project-tech span {
+    font-size: 0.7rem;
+    padding: 5px 9px;
+  }
+
+  .project-link {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
 }
 
 /* ===== CONTATO SEÇÃO ===== */
