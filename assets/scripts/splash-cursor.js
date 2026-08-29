@@ -11,6 +11,28 @@
     let animationFrameId = null;
     let isActive = true;
 
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+    function updateCursorState() {
+        if (mobileQuery.matches) {
+            isActive = false;
+
+            if (animationFrameId !== null) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+
+            // Limpa o canvas
+            gl.clear(gl.COLOR_BUFFER_BIT);
+        } else {
+            if (!isActive) {
+                isActive = true;
+                lastUpdateTime = Date.now();
+                updateFrame();
+            }
+        }
+    }
+
     // ==========================================
     // CONFIGURAÇÕES
     // ==========================================
@@ -2999,8 +3021,10 @@
     }
 
     // ==========================================
-    // EVENT LISTENERS
-    // ==========================================
+// EVENT LISTENERS
+// ==========================================
+
+function addDesktopEvents() {
 
     window.addEventListener(
         "mousedown",
@@ -3011,6 +3035,22 @@
         "mousemove",
         handleMouseMove
     );
+}
+
+function removeDesktopEvents() {
+
+    window.removeEventListener(
+        "mousedown",
+        handleMouseDown
+    );
+
+    window.removeEventListener(
+        "mousemove",
+        handleMouseMove
+    );
+}
+
+function addTouchEvents() {
 
     window.addEventListener(
         "touchstart",
@@ -3032,6 +3072,45 @@
         "touchend",
         handleTouchEnd
     );
+}
+
+function removeTouchEvents() {
+
+    window.removeEventListener(
+        "touchstart",
+        handleTouchStart
+    );
+
+    window.removeEventListener(
+        "touchmove",
+        handleTouchMove
+    );
+
+    window.removeEventListener(
+        "touchend",
+        handleTouchEnd
+    );
+}
+
+function updateDeviceEvents() {
+
+    const isMobile =
+        window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+
+        removeDesktopEvents();
+        removeTouchEvents();
+
+    } else {
+
+        addDesktopEvents();
+        addTouchEvents();
+
+    }
+}
+
+updateDeviceEvents();
 
     // ==========================================
     // START
@@ -3085,15 +3164,50 @@
     // RESIZE
     // ==========================================
 
-    window.addEventListener(
-        "resize",
-        () => {
+   window.addEventListener("resize", () => {
 
-            if (resizeCanvas()) {
-                initFramebuffers();
-            }
+    const isMobile =
+        window.matchMedia("(max-width: 768px)").matches;
+
+    const splashCursor =
+        document.getElementById("splash-cursor");
+
+    updateDeviceEvents();
+
+    if (isMobile) {
+
+        isActive = false;
+
+        if (animationFrameId !== null) {
+
+            cancelAnimationFrame(
+                animationFrameId
+            );
+
+            animationFrameId = null;
         }
-    );
+
+        splashCursor.style.display = "none";
+
+    } else {
+
+        splashCursor.style.display = "block";
+
+        if (!isActive) {
+
+            isActive = true;
+
+            lastUpdateTime =
+                Date.now();
+
+            updateFrame();
+        }
+
+        if (resizeCanvas()) {
+            initFramebuffers();
+        }
+    }
+});
 
     // ==========================================
     // CLEANUP

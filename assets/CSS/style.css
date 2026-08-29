@@ -14,6 +14,15 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar{
+  width: 10px;
+  background: #1b1a1d;
+}
+::-webkit-scrollbar-thumb{
+  width: 10px;
+  background: #a0715b;
+}
+
 /* ===== CURSOR SPLASH ===== */
 #splash-cursor {
   position: fixed;
@@ -587,7 +596,7 @@ ul {
 /* ===== PROJETOS SEÇÃO ===== */
 
 .project-box {
-  height: 450px;
+  height: 370px;
   width: 550px;
   border-radius: 15px;
   border: 1px solid #6951319a;
@@ -924,7 +933,7 @@ ul {
 [data-bs-theme="light"] .contact-form,
 [data-bs-theme="light"] .contact-form,
 [data-bs-theme="light"] .skill-card {
-  background-color: #eeeeee3d;
+  background-color: #eeeeeeea;
   transition: background-color 0.8s, color 0.8s;
 }
 
@@ -1019,6 +1028,9 @@ button:hover .bi-moon-fill {
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 991.98px) {
+  #splash-cursor {
+    display: none;
+  }
   .home-section div {
     background-color: #212529;
   }
