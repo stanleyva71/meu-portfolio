@@ -1,6 +1,5 @@
 # Portfólio Stanley Vale 💻
-![Logo](assets/img/Portifolio.png)
-
+<img width="1468" height="799" alt="Screenshot_6" src="https://github.com/user-attachments/assets/3180c64c-ca80-48b0-ab92-110a0683caed" />
 
 Bem-vindo ao meu **Portfólio**!
 
